@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/backimg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+.herotext {
+  width: 25%;
+  margin: auto;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  background-color: #fff;
+  opacity: 0.8;
+  color: #488776;
+  outline: 2px black;
+  border-radius: 15px;
+}
+.parent {
+  display: flex;
+  background-color: rgba(54, 54, 54, 0.922);
+  color: white;
+}
+
+.child1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px;
+  margin: 20px 0 20px 50px;
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+}
+.child1 span {
+  color: #488776;
+}
+.child2 {
+  flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* add this to wrap the child elements to the next line */
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.child2 a {
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+.child2 a:hover {
+  color: #488776;
+  transition: 0.5s;
+}
+.child2 .active {
+  color: #488776;
+}
+/* -----gallery style-------- */
+
+.grid-item {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  font-size: 16px;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color:#488776; ;
+  padding: 5px;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* ------responsive nav design------- */
+
+@media screen and (min-width: 768px) {
+  .parent {
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .child1 {
+    flex-basis: auto;
+    margin: 0;
+  }
+  .child2 {
+    flex-basis: auto;
+    margin: 0;
+  }
+  .child2 a {
+    padding: 0 20px;
+  }
+}
+
+/* ----footer css----- */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.contact-info {
+  margin-bottom: 20px;
+}
+.contact-info div {
+  display: inline-block;
+  margin-right: 20px;
+}
+.contact-info i {
+  margin-right: 5px;
+}
+.social-icons {
+  margin-bottom: 20px;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+.social-icons i {
+  margin-right: 5px;
+}
+.social-icons i:hover {
+  color: #488776;
+}
+
+/* ------responsive footer design------- */
+
+@media screen and (max-width: 768px) {
+  .contact-info div,
+  .social-icons a {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
