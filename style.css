@@ -30,11 +30,9 @@
 }
 
 .child1 {
-  display: flex;
   flex-wrap: wrap;
-  flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
+  flex-basis: 100%;
   display: flex;
-  /* width: 100%; */
   justify-content: flex-start;
   padding: 10px;
   margin: 20px 0 20px 50px;
@@ -49,10 +47,9 @@
   display: none;
 }
 .child2 {
-  flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
-  /* width: 100%; */
+  flex-basis: 100%;
   display: flex;
-  flex-wrap: wrap; /* add this to wrap the child elements to the next line */
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin: 20px 0px;
@@ -136,7 +133,6 @@
 @media screen and (min-width: 768px) {
   .parent {
     justify-content: space-around;
-    /* padding: 10px; */
   }
   .child1 {
     flex-basis: auto;
@@ -153,8 +149,8 @@
 @media (max-width: 768px) {
   .child3 {
     display: flex;
-    flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
-    flex-wrap: wrap; /* add this to wrap the child elements to the next line */
+    flex-basis: 100%;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     margin: 20px 0px;
@@ -216,8 +212,85 @@
 @media screen and (max-width: 768px) {
   .contact-info div,
   .social-icons a {
-    /* display: block; */
     margin-right: 0;
     margin-bottom: 10px;
   }
+}
+
+/* ------Heart Button--------- */
+.parent-content {
+  display: flex;
+  width: 100%;
+}
+.child-text {
+  display: flex;
+  width: 80%;
+}
+.heartbtn {
+  display: flex;
+  width: 20%;
+  justify-content: flex-end;
+  padding-right: 7px;
+}
+
+.container-heart {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container-heart input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: #eee; */
+  color: #000;
+}
+.container-heart:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container-heart input:checked ~ .checkmark {
+  color: red;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container-heart .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid red;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.desc {
+  display: flex;
+  flex-basis: 90%;
+}
+.container-heart {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 10%;
+  justify-content: flex-end;
+  /* align-items: ; */
+  margin-left: 8px;
 }
