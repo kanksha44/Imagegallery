@@ -34,7 +34,7 @@
   flex-wrap: wrap;
   flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: flex-start;
   padding: 10px;
   margin: 20px 0 20px 50px;
@@ -47,8 +47,7 @@
 }
 .child2 {
   flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
-
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-wrap: wrap; /* add this to wrap the child elements to the next line */
   justify-content: space-around;
@@ -71,30 +70,65 @@
 }
 /* -----gallery style-------- */
 
-.grid-item {
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 15px;
-  font-size: 16px;
-  text-align: center;
+.container-mainbox {
+  max-width: 1335;
+  margin: 0 auto;
+  border: 2px solid #488776;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color:#488776; ;
-  padding: 5px;
+
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  border: 2px solid #488776;
 }
-.grid-item img {
-  width: 100%;
+.grid-items {
   height: auto;
+  flex-basis: 20% !important;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #488776;
+}
+.grid-items img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .grid-items {
+    flex-basis: 25% !important;
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-items {
+    flex-basis: 33.33% !important;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .grid-items {
+    flex-basis: 50% !important;
+    height: auto;
+  }
+}
+@media (max-width: 567px) {
+  .grid-items {
+    flex-basis: 100% !important;
+    height: auto;
+  }
 }
 
 /* ------responsive nav design------- */
 
 @media screen and (min-width: 768px) {
   .parent {
-    justify-content: space-between;
-    padding: 10px;
+    justify-content: space-around;
+    /* padding: 10px; */
   }
   .child1 {
     flex-basis: auto;
@@ -106,6 +140,11 @@
   }
   .child2 a {
     padding: 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  .hero .herotext {
+    width: 65%;
   }
 }
 
