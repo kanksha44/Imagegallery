@@ -45,6 +45,9 @@
 .child1 span {
   color: #488776;
 }
+.child3 {
+  display: none;
+}
 .child2 {
   flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
   /* width: 100%; */
@@ -124,6 +127,11 @@
 }
 
 /* ------responsive nav design------- */
+@media (max-width: 567px) {
+  .child1 {
+    margin: 20px 0 20px 20px;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .parent {
@@ -143,6 +151,27 @@
   }
 }
 @media (max-width: 768px) {
+  .child3 {
+    display: flex;
+    flex-basis: 100%; /* add this to make the first child element span across the full width of the parent element */
+    flex-wrap: wrap; /* add this to wrap the child elements to the next line */
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0px;
+    padding-right: 30px;
+  }
+  .child3 a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+  }
+  .child3 a:hover {
+    color: #488776;
+    transition: 0.5s;
+  }
+  .child2 {
+    display: none;
+  }
   .hero .herotext {
     width: 65%;
   }
@@ -187,7 +216,7 @@
 @media screen and (max-width: 768px) {
   .contact-info div,
   .social-icons a {
-    display: block;
+    /* display: block; */
     margin-right: 0;
     margin-bottom: 10px;
   }
